@@ -1,72 +1,118 @@
 <html>
-<head>
-    <title>Base Camp Coding Academy Job Posting</title>
-    <meta charset="utf-8" />
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-    />
-</head>
-<body class="bg-light">
-<nav
-        style="background-color: #3b1b0c"
-        class="navbar navbar-expand-lg border-bottom border-dark sticky"
->
-    <ul class="navbar-nav mr-auto nav">
-        <li class="nav-item">
-            <a class="nav-link text-white" href="/">Home</a>
-        </li>
-    </ul>
-</nav><html>
-<head>
-    <title>Base Camp Coding Academy Job Posting</title>
-    <meta charset="utf-8" />
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-    />
-</head>
-<body class="bg-light">
-<nav
-        style="background-color: #3b1b0c"
-        class="navbar navbar-expand-lg border-bottom border-dark sticky"
->
-    <ul class="navbar-nav mr-auto nav">
-        <li class="nav-item">
-            <a class="nav-link text-white" href="/">Home</a>
-        </li>
-    </ul>
-</nav>
-<header id="myCarousel" class="carousel slide">
-    <div class="carousel-inner">
-        <div class="item active">
-            <div
-                    class="fill"
-                    style="background-image:url('images/home-top-bg.png');"
-            >
-                <span class="center-spacer"></span>
-                <img
-                        src="images/basecamp-logo.png"
-                        style="vertical-align:middle;"
-                        alt="Base Camp Coding Academy"
-                />
+    <head>
+        <title>Base Camp Coding Academy Job Posting</title>
+        <meta charset="utf-8" />
+        <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1, user-scalable=no"
+        />
+        <link rel="stylesheet" href="/css/main.css" />
+        <link
+                rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous"
+        />
+    </head>
+    <body class="bg-light">
+        <nav
+                style="background-color: #3b1b0c"
+                class="navbar navbar-expand-lg border-bottom border-dark sticky"
+        >
+            <ul class="navbar-nav mr-auto nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/">Home</a>
+                </li>
+            </ul>
+        </nav>
+        <header id="myCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div
+                            class="fill"
+                            style="background-image:url('images/home-top-bg.png');"
+                    >
+                        <span class="center-spacer"></span>
+                        <img
+                                src="images/basecamp-logo.png"
+                                style="vertical-align:middle;"
+                                alt="Base Camp Coding Academy"
+                        />
+                    </div>
+                </div>
             </div>
+        </header>
+            <form class="mt-3" action="/post" method="POST">
+                <div id="post-form" class="shadow-lg p-3 w-75 mx-auto">
+                    <div style="background-color: #3b1b0c" class="card ">
+                        <div class="card-body text-center text-white">
+                            <h1 class="card-title">Job Posting</h1>
+                        </div>
+                    </div>
+                <div class='form-group'>
+                    <h2 class="mt-5">Company Details</h2>
+                    <hr>
+
+                    <h3>Employer Name  <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+                    <input type="text" name="name" placeholder="John Doe" required="required"><br>
+
+                    <h3 class="mt-3">Company Name <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+                    <input type="text" name="company" required="required" placeholder="Company Name"><br>
+
+                    <h3 class="mt-3">Industry <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+                    <input type="text" list="jobs" name="industry" required="required" placeholder="Computer Software"><br>
+                    <datalist id="jobs">
+                        <option value="Computer Software">
+                        <option value="Information Technology">
+                        <option value="Computer Networking">
+                        <option value="Program Development">
+                        <option value="Information Services">
+                    </datalist>
+
+                    <h3 class="mt-3">Company Logo <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+                    <!--write javascript to display img before submission-->
+                    <input id="source" type="url" name="logo" placeholder="https://basecampcodingacademy.org/images/header-logo.png">
+                    <div class="container">
+                        <img id="preview" src="" alt="Company Logo">
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <h2 class="mt-5">Job Details</h2>
+                    <hr>
+                    <h3>Job Position <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+                    <input type="text" name="position" required="required" placeholder="Job Position"><br>
+                    <h3 class="mt-3">Job Location <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+                    <input type="text" name="location" required="required" placeholder="Job Location"><br>
+                    <h3 class="mt-3">Experience Level <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+                    <input type="radio" name="exp" value="Internship">Internship<br>
+                    <input type="radio" name="exp" value="Entry" checked>Entry<br>
+                    <input type="radio" name="exp" value="Associate">Associate<br>
+                    <input type="radio" name="exp" value="Mid-Senior">Mid-Senior<br>
+                    <input type="radio" name="exp" value="Director">Director<br>
+                    <input type="radio" name="exp" value="Executive">Executive<br>
+                    <h3 class="mt-3">Job Description <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+                    <textarea class="form-control" name="desc" required="required" rows="4" cols="50" placeholder="Job Description"></textarea>
+                </div>
+                    <div class="form-group">
+                        <h2 class="mt-5">Extra Details</h2>
+                        <hr>
+                    <h3>Benefits</h3>
+                    <textarea class="form-control" name="benefits" rows="4" cols="50" placeholder="- Benefit&#10;- Benefit&#10;- Benefit"></textarea>
+                    <h3 class="mt-3">Qualifications</h3>
+                    <textarea class="form-control" name="qualifications" rows="4" cols="50" placeholder="- Qualification&#10;- Qualification&#10;- Qualification"></textarea>
+                </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
         </div>
-    </div>
-</header>
-</body>
+    </body>
+    <script>
+        var src = document.getElementById("source")
+        var preview = document.getElementById("preview")
+        src.addEventListener("keyup", function() {
+            preview.src = src.value
+            console.log(src.value + " src")
+            console.log(preview.src + " preview")
+        })
+    </script>
 </html>
