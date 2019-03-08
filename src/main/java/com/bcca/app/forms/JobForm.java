@@ -123,4 +123,8 @@ public class JobForm {
     public void setQualifications(String qualifications) {
         this.qualifications = qualifications;
     }
+
+    public Boolean isValid() {
+        return (name != null && company != null && position != null && location != null && desc != null && exp != null && industry != null && date != null && logo!= null);
+    }
 }
