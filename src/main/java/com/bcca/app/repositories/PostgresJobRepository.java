@@ -22,16 +22,16 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
     }
 
     public void save(JobForm job) {
-        jdbc.update("INSERT INTO postings (name, company, position, location, desc, exp, industry, date, benefits, logo, qualifications) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        jdbc.update("INSERT INTO postings (name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 job.getName(), job.getCompany(), job.getPosition(), job.getLocation(), job.getDesc(), job.getExp(), job.getIndustry(), new Date(), job.getBenefits(), job.getLogo(), job.getQualifications());
     }
 
     public List<JobForm> findAll() {
-        return jdbc.query("SELECT id, name, company, position, location, desc, exp, industry, date, benefits, logo, qualifications FROM postings ORDER BY date DESC", this::mapRowToJob);
+        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings ORDER BY date DESC", this::mapRowToJob);
     }
 
     public Optional<JobForm> findById(Integer id) {
-        return Optional.ofNullable(jdbc.queryForObject("SELECT id, name, company, position, location, desc, exp, industry, date, benefits, logo, qualifications FROM postings WHERE id = ?", this::mapRowToJob, id));
+        return Optional.ofNullable(jdbc.queryForObject("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings WHERE id = ?", this::mapRowToJob, id));
     }
 
     public JobForm mapRowToJob(ResultSet row, int rowNum) throws SQLException {
@@ -46,7 +46,7 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
                 row.getString("industry"),
                 row.getDate("date"),
                 row.getString("benefits"),
-                row.getURL("logo"),
+                row.getString("logo"),
                 row.getString("qualifications")
         );
     }

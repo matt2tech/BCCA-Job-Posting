@@ -14,10 +14,10 @@ public class JobForm {
     private String industry;
     private Date date;
     private String benefits;
-    private URL logo;
+    private String logo;
     private String qualifications;
 
-    public JobForm(Integer id, String name, String company, String position, String location, String desc, String exp, String industry, Date date, String benefits, URL logo, String qualifications) {
+    public JobForm(Integer id, String name, String company, String position, String location, String desc, String exp, String industry, Date date, String benefits, String logo, String qualifications) {
         this.id = id;
         this.name = name;
         this.company = company;
@@ -108,11 +108,11 @@ public class JobForm {
         this.benefits = benefits;
     }
 
-    public URL getLogo() {
+    public String getLogo() {
         return logo;
     }
 
-    public void setLogo(URL logo) {
+    public void setLogo(String logo) {
         this.logo = logo;
     }
 
@@ -125,6 +125,6 @@ public class JobForm {
     }
 
     public Boolean isValid() {
-        return (name != null && company != null && position != null && location != null && desc != null && exp != null && industry != null && date != null && logo!= null);
+        return (name != null && company != null && position != null && location != null && desc != null && exp != null && industry != null && logo!= null);
     }
 }

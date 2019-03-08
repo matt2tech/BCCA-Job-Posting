@@ -27,8 +27,11 @@ public class PostController {
 
     @PostMapping
     public String postJob(JobForm job, Model model) {
+        System.out.println("POST CHECKPOINT 1");
         if (job.isValid()) {
+            System.out.println("POST CHECKPOINT 2");
             jobRepository.save(job);
+            System.out.println("POST CHECKPOINT 3");
             model.addAttribute("text", "Job Posted!");
             return "home";
         } else {
