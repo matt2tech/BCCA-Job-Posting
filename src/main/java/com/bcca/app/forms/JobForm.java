@@ -101,7 +101,11 @@ public class JobForm {
     }
 
     public String getBenefits() {
-        return benefits;
+        if (benefits.isEmpty()) {
+            return "-";
+        } else {
+            return benefits;
+        }
     }
 
     public void setBenefits(String benefits) {
@@ -117,7 +121,11 @@ public class JobForm {
     }
 
     public String getQualifications() {
-        return qualifications;
+        if (qualifications.isEmpty()) {
+            return "-";
+        } else {
+            return qualifications;
+        }
     }
 
     public void setQualifications(String qualifications) {
