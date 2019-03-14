@@ -21,6 +21,9 @@
 >
     <ul class="navbar-nav mr-auto nav">
         <li class="nav-item">
+            <a class="nav-link text-white" href="/">Home</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-white" href="/post">Post</a>
         </li>
     </ul>
@@ -42,8 +45,12 @@
         </div>
     </div>
 </header>
-{{#jobs}}
-    <a href="{{id}}">{{position}}</a>
-{{/jobs}}
+<div class="mt-3 p-4">
+<div class="container p-4mx-auto shadow-lg">
+{{#job}}
+    {{position}}
+{{/job}}
+</div>
+</div>
 </body>
 </html>
