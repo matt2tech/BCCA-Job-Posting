@@ -46,11 +46,60 @@
     </div>
 </header>
 <div class="mt-3 p-4">
-<div class="container p-4mx-auto shadow-lg">
-{{#job}}
-    {{position}}
+    {{#job}}
+<div class="container p-3 mx-auto shadow-lg">
+    <div style="background-color: #3b1b0c" class="card">
+        <div class="card-body text-center text-white">
+            <h1 class="card-title">{{company}}</h1>
+        </div>
+    </div>
+    <div style="font-size: 20px;">
+        <div class="text-center">
+            <div class="d-tab">
+                <img class="" src="{{logo}}" style="max-width: 100%; height: auto;" alt="Logo">
+            </div>
+            <div class="d-tab">
+                <p>{{company}} - {{industry}}</p>
+            </div>
+        </div>
+
+
+            <h2 class="mt-5 text-center">Job Details</h2>
+            <hr>
+            <div class="d-job mw-50 mc-auto">
+            <h3 class="font-weight-bolder">Job Position</h3>
+                <hr>
+            <p>{{position}}</p>
+            </div>
+        <div class="d-job mw-50 mc-auto">
+            <h3 class="font-weight-bolder">Job Location</h3>
+            <hr>
+            <p>{{location}}</p>
+        </div>
+        <div class="d-job mw-50 mc-auto">
+            <h3 class="font-weight-bolder">Experience Level</h3>
+            <hr>
+            <p>{{exp}}</p>
+        </div>
+        <div class="d-job mw-50 mc-auto">
+            <h3 class="font-weight-bolder">Job Description</h3>
+            <hr>
+            <p class="para mw-50">{{desc}}</p>
+        </div>
+        <div class="d-job mw-50 mc-auto">
+            <h3 class="font-weight-bolder">Qualifications</h3>
+            <hr>
+            <p class="para mw-50">{{qualifications}}</p>
+        </div>
+        <div class="d-job mw-50 mc-auto">
+            <h3 class="font-weight-bolder">Benefits</h3>
+            <hr>
+            <p class="para mw-50">{{benefits}}</p>
+        </div>
+    </div>
+    <small>Posted by: {{name}}</small>
+</div>
+</div>
 {{/job}}
-</div>
-</div>
 </body>
 </html>

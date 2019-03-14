@@ -56,7 +56,24 @@ header {
     font-weight: bold;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 600px){
+.mw-50 {
+    max-width: 50% !important;
+}
+
+.para {
+    font-size: 14px !important;
+}
+
+.d-job {
+    display: flex;
+}
+
+.mc-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
     #myCarousel{
         width: 100%;
     }
@@ -75,6 +92,19 @@ header {
 
     #post-form {
         width: 90% !important;
+    }
+
+    .mw-50 {
+        max-width: 100% !important;
+    }
+
+    .d-job {
+        display: table !important;
+    }
+
+    .mc-auto {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 }
 
