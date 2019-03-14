@@ -42,6 +42,12 @@
                 </div>
             </div>
         </header>
+        {{#success}}
+            <strong class="text-success mx-auto">{{.}}</strong>
+        {{/success}}
+        {{#failure}}
+            <strong class="text-danger mx-auto">{{.}}</strong>
+        {{/failure}}
             <form class="mt-3" action="/post" method="POST">
                 <div id="post-form" class="shadow-lg p-3 w-75 mx-auto">
                     <div style="background-color: #3b1b0c" class="card ">

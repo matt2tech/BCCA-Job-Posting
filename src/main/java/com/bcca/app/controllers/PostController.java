@@ -32,10 +32,10 @@ public class PostController {
             System.out.println("POST CHECKPOINT 2");
             jobRepository.save(job);
             System.out.println("POST CHECKPOINT 3");
-            model.addAttribute("text", "Job Posted!");
-            return "home";
+            model.addAttribute("success", "Job Posted!");
+            return "post";
         } else {
-            model.addAttribute("text", "Please fill out the form with the correct credentials please.");
+            model.addAttribute("failure", "An error has occurred. Please try again.");
             return "post";
         }
     }
