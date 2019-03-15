@@ -66,6 +66,7 @@ header {
 
 .d-job {
     display: flex;
+    justify-content: space-between
 }
 
 .mc-auto {
@@ -92,6 +93,10 @@ header {
 
 .desc {
     max-width: 40%;
+}
+
+.hide {
+    display: none;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px){
@@ -134,6 +139,10 @@ header {
 
     .desc {
         display: none;
+    }
+
+    .hide {
+        display: block;
     }
 }
 

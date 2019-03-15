@@ -70,33 +70,41 @@
             <hr>
             <div class="d-job mw-50 mc-auto">
             <h3 class="font-weight-bolder">Job Position</h3>
-                <hr>
+                <hr class="hide">
             <p>{{position}}</p>
             </div>
         <div class="d-job mw-50 mc-auto">
             <h3 class="font-weight-bolder">Job Location</h3>
-            <hr>
+            <hr class="hide">
             <p>{{location}}</p>
         </div>
         <div class="d-job mw-50 mc-auto">
             <h3 class="font-weight-bolder">Experience Level</h3>
-            <hr>
+            <hr class="hide">
             <p>{{exp}}</p>
         </div>
         <div class="d-job mw-50 mc-auto">
             <h3 class="font-weight-bolder">Job Description</h3>
-            <hr>
+            <hr class="hide">
             <p class="para mw-50">{{desc}}</p>
         </div>
         <div class="d-job mw-50 mc-auto">
             <h3 class="font-weight-bolder">Qualifications</h3>
-            <hr>
-            <p class="para mw-50">{{job.getQualifications}}</p>
+            <hr class="hide">
+            <div class="mw-50">
+            {{#getQualifications}}
+            <li class="para">{{this}}</li>
+            {{/getQualifications}}
+            </div>
         </div>
         <div class="d-job mw-50 mc-auto">
             <h3 class="font-weight-bolder">Benefits</h3>
-            <hr>
-            <p class="para mw-50">{{job.getBenefits}}</p>
+            <hr class="hide">
+            <div class="mw-50">
+                {{#getBenefits}}
+            <li class="para">{{this}}</li>
+                {{/getBenefits}}
+            </div>
         </div>
     </div>
 </div>

@@ -100,11 +100,11 @@ public class JobForm {
         this.date = date;
     }
 
-    public String getBenefits() {
+    public String[] getBenefits() {
         if (benefits.isEmpty()) {
-            return "-";
+            return "".split("");
         } else {
-            return benefits;
+            return benefits.split("\n");
         }
     }
 
@@ -120,11 +120,11 @@ public class JobForm {
         this.logo = logo;
     }
 
-    public String getQualifications() {
+    public String[] getQualifications() {
         if (qualifications.isEmpty()) {
-            return "-";
+            return "".split("");
         } else {
-            return qualifications;
+            return qualifications.split("\n");
         }
     }
 
