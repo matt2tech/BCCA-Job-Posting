@@ -73,6 +73,19 @@ header {
     margin-left: auto !important;
 }
 
+.d-tab {
+    display: table;
+}
+
+.logo {
+    height: 120px;
+    width: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
+    background-color: lightgrey;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px){
     #myCarousel{
         width: 100%;
