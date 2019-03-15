@@ -135,4 +135,12 @@ public class JobForm {
     public Boolean isValid() {
         return (name != null && company != null && position != null && location != null && desc != null && exp != null && industry != null && logo!= null);
     }
+
+    public String preview() {
+        if (desc.length() < 200) {
+            return desc;
+        } else {
+            return desc.substring(0, 197) + "...";
+        }
+    }
 }
