@@ -102,7 +102,7 @@ public class JobForm {
 
     public String[] getBenefits() {
         if (benefits.isEmpty()) {
-            return "".split("");
+            return "Not Available".split("\n");
         } else {
             return benefits.split("\n");
         }
@@ -122,7 +122,7 @@ public class JobForm {
 
     public String[] getQualifications() {
         if (qualifications.isEmpty()) {
-            return "".split("");
+            return "Not Available".split("\n");
         } else {
             return qualifications.split("\n");
         }
