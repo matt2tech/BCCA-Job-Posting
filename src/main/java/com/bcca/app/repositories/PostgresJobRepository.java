@@ -34,6 +34,14 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
         return Optional.ofNullable(jdbc.queryForObject("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings WHERE id = ?", this::mapRowToJob, id));
     }
 
+    public List<JobForm> oldest() {
+        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings ORDER BY date ASC", this::mapRowToJob);
+    }
+
+    public List<JobForm> findByDate(String date) {
+        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings where date = ?", this::mapRowToJob, date);
+    }
+
     public JobForm mapRowToJob(ResultSet row, int rowNum) throws SQLException {
         return new JobForm(
                 row.getInt("id"),

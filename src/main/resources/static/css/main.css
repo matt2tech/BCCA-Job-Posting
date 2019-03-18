@@ -103,6 +103,22 @@ header {
     display: none;
 }
 
+.btn-bcca {
+    color: white;
+    background-color: #6f4211;
+    border-color: #6f4211
+}
+
+.btn-bcca:hover {
+    color: white;
+    background-color: #3b1b0c;
+    border-color: #3b1b0c;
+}
+
+form {
+    flex: 1;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px){
     #myCarousel{
         width: 100%;
