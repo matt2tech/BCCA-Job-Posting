@@ -53,10 +53,11 @@ public class HomeController {
         try {
             Date range = dateFormat.parse(date);
             model.addAttribute("jobs", jobRepository.findByDate(range));
+            model.addAttribute("date", range);
             return "home";
         } catch (ParseException e) {
             e.printStackTrace();
-            model.addAttribute("error", "Error finding by date!");
+            model.addAttribute("error", "Error parsing date!");
             return "home";
         }
     }

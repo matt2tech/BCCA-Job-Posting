@@ -56,6 +56,12 @@
     <form method="GET">
         <input type="date" name="date">
         <button type="submit" class="btn-bcca btn">Submit</button>
+        {{#date}}
+            <p>Date: {{.}}</p>
+        {{/date}}
+        {{#error}}
+            <p class="text-danger">ERROR: {{.}}</p>
+        {{/error}}
     </form>
     </div>
 </div>
