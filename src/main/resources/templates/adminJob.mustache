@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>Base Camp Coding Academy Job Posting</title>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body class="bg-light">
+<nav
+        style="background-color: #3b1b0c"
+        class="navbar navbar-expand-lg border-bottom border-dark sticky"
+>
+    <ul class="navbar-nav mr-auto nav">
+        <li class="nav-item">
+            <a class="nav-link text-white" href="/admin">Admin</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="/post">Post</a>
+        </li>
+    </ul>
+    <span class="text-white" style="border: solid red;">ADMIN</span>
+</nav>
+<header id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item active">
+            <div
+                    class="fill"
+                    style="background-image:url('../images/home-top-bg.png');"
+            >
+                <span class="center-spacer"></span>
+                <img
+                        src="../images/basecamp-logo.png"
+                        style="vertical-align:middle;"
+                        alt="Base Camp Coding Academy"
+                />
+            </div>
+        </div>
+    </div>
+</header>
+<div class="mt-3 p-4">
+{{#adminJob}}
+        <div class="container p-3 mx-auto shadow-lg">
+            <div style="background-color: #3b1b0c" class="card">
+                <div class="card-body text-center text-white">
+                    <h1 class="card-title">{{company}}</h1>
+                </div>
+            </div>
+            <div style="font-size: 20px;">
+                <div class="text-center mt-3">
+                    <div>
+                        <img class="" src="{{logo}}" style="max-width: 100%; height: auto;" alt="Logo">
+                    </div>
+                    <div>
+                        <p>{{company}} - {{industry}}</p>
+                        <small>Posted by: {{name}}</small><br>
+                        <small>Date: {{date}}</small>
+                    </div>
+                </div>
+
+
+                <h2 class="mt-5 text-center">Job Details</h2>
+                <hr>
+                <div class="d-job mw-50 mc-auto">
+                    <h3 class="font-weight-bolder">Job Position</h3>
+                    <hr class="hide">
+                    <p>{{position}}</p>
+                </div>
+                <div class="d-job mw-50 mc-auto">
+                    <h3 class="font-weight-bolder">Job Location</h3>
+                    <hr class="hide">
+                    <p>{{location}}</p>
+                </div>
+                <div class="d-job mw-50 mc-auto">
+                    <h3 class="font-weight-bolder">Experience Level</h3>
+                    <hr class="hide">
+                    <p>{{exp}}</p>
+                </div>
+                <div class="d-job mw-50 mc-auto">
+                    <h3 class="font-weight-bolder">Job Description</h3>
+                    <hr class="hide">
+                    <p class="para mw-50">{{desc}}</p>
+                </div>
+                <div class="d-job mw-50 mc-auto">
+                    <h3 class="font-weight-bolder">Qualifications</h3>
+                    <hr class="hide">
+                    <div class="mw-50 mb-3">
+                        {{#getQualifications}}
+                            <li class="para">{{this}}</li>
+                        {{/getQualifications}}
+                    </div>
+                </div>
+                <div class="d-job mw-50 mc-auto">
+                    <h3 class="font-weight-bolder">Benefits</h3>
+                    <hr class="hide">
+                    <div class="mw-50 mb-3">
+                        {{#getBenefits}}
+                            <li class="para">{{this}}</li>
+                        {{/getBenefits}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/adminJob}}
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
