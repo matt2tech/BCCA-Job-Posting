@@ -8,7 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 @Controller
 @RequestMapping("/")
@@ -45,7 +49,15 @@ public class HomeController {
 
     @RequestMapping(params="date", method=RequestMethod.GET)
     public String getDate(Model model, @RequestParam("date") String date) {
-        model.addAttribute("jobs", jobRepository.findByDate(date));
-        return "home";
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date range = dateFormat.parse(date);
+            model.addAttribute("jobs", jobRepository.findByDate(range));
+            return "home";
+        } catch (ParseException e) {
+            e.printStackTrace();
+            model.addAttribute("error", "Error finding by date!");
+            return "home";
+        }
     }
 }

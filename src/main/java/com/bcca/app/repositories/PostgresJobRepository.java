@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -38,8 +39,9 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
         return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings ORDER BY date ASC", this::mapRowToJob);
     }
 
-    public List<JobForm> findByDate(String date) {
-        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings where date = ?", this::mapRowToJob, date);
+    public List<JobForm> findByDate(Date date) {
+        System.out.println("Checkpoint 2 " + date);
+        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings WHERE date >= ?", this::mapRowToJob, date);
     }
 
     public JobForm mapRowToJob(ResultSet row, int rowNum) throws SQLException {
