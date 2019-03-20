@@ -1,12 +1,12 @@
 package com.bcca.app.repositories;
 
 
+import com.bcca.app.forms.CommentForm;
 import com.bcca.app.forms.JobForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.text.html.Option;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -63,6 +63,25 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
                 row.getString("logo"),
                 row.getString("qualifications"),
                 row.getString("hireSite")
+        );
+    }
+
+//    comment side
+
+    public void saveComment(CommentForm com) {
+        jdbc.update("INSERT INTO comments (comment, date, postId) VALUES(?, ?, ?)", com.getComment(), new Date(), com.getPostId());
+    }
+
+    public List<CommentForm> findAllComments(Integer id) {
+        return jdbc.query("SELECT * FROM comments WHERE postId = ? ORDER BY date DESC", this::mapRowToCom, id);
+    }
+
+    public CommentForm mapRowToCom(ResultSet row, int rowNum) throws SQLException {
+        return new CommentForm(
+                row.getInt("id"),
+                row.getString("comment"),
+                row.getDate("date"),
+                row.getInt("postId")
         );
     }
 

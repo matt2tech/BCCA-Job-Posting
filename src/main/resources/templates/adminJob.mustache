@@ -12,7 +12,7 @@
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
 </head>
 <body class="bg-light">
 <nav
@@ -132,11 +132,8 @@
             </div>
         </div>
     </div>
-{{/adminJob}}
-<!-- Button trigger modal -->
-<!-- Modal -->
-<form class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<form class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" method="POST" action="admin/{{id}}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Admin Comment</h5>
@@ -154,6 +151,7 @@
         </div>
     </div>
 </form>
+{{/adminJob}}
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

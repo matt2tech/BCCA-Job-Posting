@@ -33,8 +33,10 @@ public class AdminController {
     @GetMapping("/{id}")
     public String getAdminJobPage(Model model, @PathVariable(value = "id") Integer id) {
         var job = jobRepository.findById(id);
+        var com = jobRepository.findAllComments(id);
         if(job.isPresent()) {
             model.addAttribute("adminJob", job.get());
+            model.addAttribute("com", com);
             return "adminJob";
         } else {
             return "404";
