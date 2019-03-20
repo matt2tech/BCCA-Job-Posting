@@ -66,12 +66,8 @@ header {
 
 .d-job {
     display: flex;
+    justify-content: space-between;
 }
-
-.d-job h3, .d-job div, .d-job p{
-    flex: 1
-}
-
 
 .mc-auto {
     margin-right: auto !important;

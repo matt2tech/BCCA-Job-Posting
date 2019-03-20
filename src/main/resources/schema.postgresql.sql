@@ -10,5 +10,19 @@ CREATE TABLE IF NOT EXISTS postings (
     date DATE NOT NULL,
     benefits TEXT,
     logo TEXT NOT NULL,
-    qualifications TEXT
+    qualifications TEXT,
+    hireSite TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS comments (
+    id SERIAL PRIMARY KEY,
+    comment TEXT NOT NULL,
+    date DATE NOT NULL,
+    postId INTEGER REFERENCES postings
+);
+
+ALTER TABLE postings OWNER TO "bcca";
+GRANT ALL ON TABLE postings TO "bcca";
+ALTER TABLE comments OWNER TO "bcca";
+GRANT ALL ON TABLE comments TO "bcca";
+GRANT ALL PRIVILEGES ON DATABASE "bcca-employment" TO "bcca";

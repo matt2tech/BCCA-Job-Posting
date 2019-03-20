@@ -13,6 +13,8 @@ public interface Repository<T> {
 
     Optional<T> findById(Integer id);
 
+    void deletePost(Integer id);
+
     void save(T t);
 
 }

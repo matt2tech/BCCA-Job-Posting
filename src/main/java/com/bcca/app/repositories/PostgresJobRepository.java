@@ -23,25 +23,29 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
     }
 
     public void save(JobForm job) {
-        jdbc.update("INSERT INTO postings (name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                job.getName(), job.getCompany(), job.getPosition(), job.getLocation(), job.getDesc(), job.getExp(), job.getIndustry(), new Date(), job.getBenefits(), job.getLogo(), job.getQualifications());
+        jdbc.update("INSERT INTO postings (name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications, hireSite) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                job.getName(), job.getCompany(), job.getPosition(), job.getLocation(), job.getDesc(), job.getExp(), job.getIndustry(), new Date(), job.getBenefits(), job.getLogo(), job.getQualifications(), job.getHireSite());
     }
 
     public List<JobForm> findAll() {
-        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings ORDER BY date DESC", this::mapRowToJob);
+        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications, hireSite FROM postings ORDER BY date DESC", this::mapRowToJob);
     }
 
     public Optional<JobForm> findById(Integer id) {
-        return Optional.ofNullable(jdbc.queryForObject("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings WHERE id = ?", this::mapRowToJob, id));
+        return Optional.ofNullable(jdbc.queryForObject("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications, hireSite FROM postings WHERE id = ?", this::mapRowToJob, id));
     }
 
     public List<JobForm> oldest() {
-        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings ORDER BY date ASC", this::mapRowToJob);
+        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications, hireSite FROM postings ORDER BY date ASC", this::mapRowToJob);
     }
 
     public List<JobForm> findByDate(Date date) {
-        System.out.println("Checkpoint 2 " + date);
-        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications FROM postings WHERE date >= ?", this::mapRowToJob, date);
+        return jdbc.query("SELECT id, name, company, position, location, \"desc\", exp, industry, date, benefits, logo, qualifications, hireSite FROM postings WHERE date >= ?", this::mapRowToJob, date);
+    }
+
+    public void deletePost(Integer id) {
+        jdbc.update("DELETE FROM comments WHERE postId = ?", id);
+        jdbc.update("DELETE FROM postings WHERE id = ?", id);
     }
 
     public JobForm mapRowToJob(ResultSet row, int rowNum) throws SQLException {
@@ -57,7 +61,8 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
                 row.getDate("date"),
                 row.getString("benefits"),
                 row.getString("logo"),
-                row.getString("qualifications")
+                row.getString("qualifications"),
+                row.getString("hireSite")
         );
     }
 

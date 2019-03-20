@@ -1,6 +1,5 @@
 package com.bcca.app.forms;
 
-import java.net.URL;
 import java.util.Date;
 
 public class JobForm {
@@ -16,8 +15,9 @@ public class JobForm {
     private String benefits;
     private String logo;
     private String qualifications;
+    private String hireSite;
 
-    public JobForm(Integer id, String name, String company, String position, String location, String desc, String exp, String industry, Date date, String benefits, String logo, String qualifications) {
+    public JobForm(Integer id, String name, String company, String position, String location, String desc, String exp, String industry, Date date, String benefits, String logo, String qualifications, String hireSite) {
         this.id = id;
         this.name = name;
         this.company = company;
@@ -30,6 +30,7 @@ public class JobForm {
         this.benefits = benefits;
         this.logo = logo;
         this.qualifications = qualifications;
+        this.hireSite = hireSite;
     }
 
     public Integer getId() {
@@ -100,12 +101,8 @@ public class JobForm {
         this.date = date;
     }
 
-    public String[] getBenefits() {
-        if (benefits.isEmpty()) {
-            return "Not Available".split("\n");
-        } else {
-            return benefits.split("\n");
-        }
+    public String getBenefits() {
+        return benefits;
     }
 
     public void setBenefits(String benefits) {
@@ -120,20 +117,24 @@ public class JobForm {
         this.logo = logo;
     }
 
-    public String[] getQualifications() {
-        if (qualifications.isEmpty()) {
-            return "Not Available".split("\n");
-        } else {
-            return qualifications.split("\n");
-        }
+    public String getQualifications() {
+        return qualifications;
     }
 
     public void setQualifications(String qualifications) {
         this.qualifications = qualifications;
     }
 
+    public String getHireSite() {
+        return hireSite;
+    }
+
+    public void setHireSite(String hireSite) {
+        this.hireSite = hireSite;
+    }
+
     public Boolean isValid() {
-        return (name != null && company != null && position != null && location != null && desc != null && exp != null && industry != null && logo!= null);
+        return (name != null && company != null && position != null && location != null && desc != null && exp != null && industry != null && logo != null && hireSite != null);
     }
 
     public String preview() {
@@ -141,6 +142,22 @@ public class JobForm {
             return desc;
         } else {
             return desc.substring(0, 197) + "...";
+        }
+    }
+
+    public String[] qualificationsText() {
+        if (qualifications.isEmpty()) {
+            return "Not Available".split("\n");
+        } else {
+            return qualifications.split("\n");
+        }
+    }
+
+    public String[] benefitsText() {
+        if (benefits.isEmpty()) {
+            return "Not Available".split("\n");
+        } else {
+            return benefits.split("\n");
         }
     }
 }

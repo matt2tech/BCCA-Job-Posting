@@ -64,46 +64,58 @@
                 <small>Date: {{date}}</small>
             </div>
         </div>
-
-
             <h2 class="mt-5 text-center">Job Details</h2>
             <hr>
-            <div class="d-job mw-50 mc-auto">
-            <h3 class="font-weight-bolder">Job Position</h3>
-                <hr class="hide">
-            <p>{{position}}</p>
+        <div class="d-job">
+            <div class="p-3">
+                <div class="d-inline-block">
+                    <p class="font-weight-bolder">Job Position</p>
+                    <hr>
+                </div>
+                <p>{{position}}</p>
             </div>
-        <div class="d-job mw-50 mc-auto">
-            <h3 class="font-weight-bolder">Job Location</h3>
-            <hr class="hide">
+        <div class="p-3">
+            <div class="d-inline-block">
+                <p class="font-weight-bolder">Job Location</p>
+                <hr>
+            </div>
             <p>{{location}}</p>
         </div>
-        <div class="d-job mw-50 mc-auto">
-            <h3 class="font-weight-bolder">Experience Level</h3>
-            <hr class="hide">
+        <div class="p-3">
+            <div class="d-inline-block">
+                <p class="font-weight-bolder">Experience Level</p>
+                <hr>
+            </div>
             <p>{{exp}}</p>
         </div>
-        <div class="d-job mw-50 mc-auto">
-            <h3 class="font-weight-bolder">Job Description</h3>
-            <hr class="hide">
-            <p class="para mw-50">{{desc}}</p>
         </div>
-        <div class="d-job mw-50 mc-auto">
-            <h3 class="font-weight-bolder">Qualifications</h3>
-            <hr class="hide">
-            <div class="mw-50 mb-3">
-            {{#getQualifications}}
-            <li class="para">{{this}}</li>
-            {{/getQualifications}}
+        <div class="p-3 mc-auto">
+            <div class="d-inline-block">
+                <p class="font-weight-bolder">Job Description</p>
+                <hr>
+            </div>
+            <p class="para">{{desc}}</p>
+        </div>
+        <div class="p-3 mc-auto">
+            <div class="d-inline-block">
+                <p class="font-weight-bolder">Qualifications</p>
+                <hr>
+            </div>
+            <div class="mb-3">
+                {{#qualificationsText}}
+                    <li class="para">{{this}}</li>
+                {{/qualificationsText}}
             </div>
         </div>
-        <div class="d-job mw-50 mc-auto">
-            <h3 class="font-weight-bolder">Benefits</h3>
-            <hr class="hide">
-            <div class="mw-50 mb-3">
-                {{#getBenefits}}
+        <div class="p-3 mc-auto">
+            <div class="d-inline-block">
+                <p class="font-weight-bolder">Benefits</p>
+                <hr>
+            </div>
+            <div class="mb-3">
+                {{#benefitsText}}
             <li class="para">{{this}}</li>
-                {{/getBenefits}}
+                {{/benefitsText}}
             </div>
         </div>
     </div>
