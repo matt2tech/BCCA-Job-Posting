@@ -8,6 +8,10 @@ public class CommentForm {
     private Date date;
     private Integer postId;
 
+    public CommentForm(){
+
+    }
+
     public CommentForm(Integer id, String comment, Date date, Integer postId) {
         this.id = id;
         this.comment = comment;
@@ -15,8 +19,18 @@ public class CommentForm {
         this.postId = postId;
     }
 
+    public CommentForm(String comment, Date date, Integer postId) {
+        this.comment = comment;
+        this.date = date;
+        this.postId = postId;
+    }
+
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getComment() {
