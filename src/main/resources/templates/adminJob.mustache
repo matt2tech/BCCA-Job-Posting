@@ -15,39 +15,39 @@
     <link rel="stylesheet" href="../css/main.css" />
 </head>
 <div class="bg-light">
-<nav
-        style="background-color: #3b1b0c"
-        class="navbar navbar-expand-lg border-bottom border-dark sticky"
->
-    <ul class="navbar-nav mr-auto nav">
-        <li class="nav-item">
-            <a class="nav-link text-white" href="/admin">Admin</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" href="/post">Post</a>
-        </li>
-    </ul>
-    <span class="text-white" style="border: solid red;">ADMIN</span>
-</nav>
-<header id="myCarousel" class="carousel slide">
-    <div class="carousel-inner">
-        <div class="item active">
-            <div
-                    class="fill"
-                    style="background-image:url('../images/home-top-bg.png');"
-            >
-                <span class="center-spacer"></span>
-                <img
-                        src="../images/basecamp-logo.png"
-                        style="vertical-align:middle;"
-                        alt="Base Camp Coding Academy"
-                />
+    <nav
+            style="background-color: #3b1b0c"
+            class="navbar navbar-expand-lg border-bottom border-dark sticky"
+    >
+        <ul class="navbar-nav mr-auto nav">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/admin">Admin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/post">Post</a>
+            </li>
+        </ul>
+        <span class="text-white" style="border: solid red;">ADMIN</span>
+    </nav>
+    <header id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div
+                        class="fill"
+                        style="background-image:url('../images/home-top-bg.png');"
+                >
+                    <span class="center-spacer"></span>
+                    <img
+                            src="../images/basecamp-logo.png"
+                            style="vertical-align:middle;"
+                            alt="Base Camp Coding Academy"
+                    />
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 <div class="mt-3 p-4">
-{{#adminJob}}
+    {{#adminJob}}
         <div class="container p-3 mx-auto shadow">
             <div style="background-color: #3b1b0c" class="card">
                 <div class="card-body text-center text-white">
@@ -121,9 +121,9 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between">
-            <form method="POST" action="/admin/{{ id }}/delete">
-                <button class="btn btn-danger">Delete</button>
-            </form>
+                <form method="POST" action="/admin/{{ id }}/delete">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
                 <div>
                     <button type="button" class="btn btn-bcca" data-toggle="modal" data-target="#exampleModal">
                         Comment
@@ -131,42 +131,44 @@
                 </div>
             </div>
         </div>
-<form method="POST" action="/admin/{{id}}" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Admin Comment</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+        <form method="POST" action="/admin/{{id}}" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Admin Comment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control" name="comment" required="required" rows="4" cols="50" placeholder="Comment"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-bcca">Submit</button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <textarea class="form-control" name="comment" required="required" rows="4" cols="50" placeholder="Comment"></textarea>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-bcca">Submit</button>
-            </div>
-        </div>
+        </form>
     </div>
-</form>
-</div>
-    <div class="p-4">
-        {{#com}}
-            <div id="comment" class="mb-4 p-2 shadow mx-auto">
-                <div>
+        <div class="p-4">
+            {{#com}}
+                <div id="comment" class="mb-4 p-2 shadow mx-auto">
                     <p class="font-weight-bolder">Comment</p>
                     <hr>
-                    <p>{{comment}}</p>
-                    <small>{{date}}</small>
+                    <div class="d-flex justify-content-between align-items-end">
+                        <div>
+                            <p>{{comment}}</p>
+                            <small>{{date}}</small>
+                        </div>
+                        <form action="/admin/{{adminJob.id}}/{{id}}/delete" method="POST">
+                            <button type="submit" class="btn btn-danger btn-sm float-right">Delete</button>
+                        </form>
+                    </div>
                 </div>
-                <form action="/admin/{{adminJob.id}}/{{id}}/delete" method="POST">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </div>
-        {{/com}}
-    </div>
-{{/adminJob}}
+            {{/com}}
+        </div>
+    {{/adminJob}}
 </div>
 </body>
 

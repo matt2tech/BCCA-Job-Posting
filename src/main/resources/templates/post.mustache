@@ -1,118 +1,118 @@
 <html>
-    <head>
-        <title>Base Camp Coding Academy Job Posting</title>
-        <meta charset="utf-8" />
-        <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1, user-scalable=no"
-        />
-        <link
-                rel="stylesheet"
-                href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-                crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="/css/main.css" />
-    </head>
-    <body class="bg-light">
-        <nav
-                style="background-color: #3b1b0c"
-                class="navbar navbar-expand-lg border-bottom border-dark sticky"
-        >
-            <ul class="navbar-nav mr-auto nav">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/">Home</a>
-                </li>
-            </ul>
-        </nav>
-        <header id="myCarousel" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div
-                            class="fill"
-                            style="background-image:url('images/home-top-bg.png');"
-                    >
-                        <span class="center-spacer"></span>
-                        <img
-                                src="images/basecamp-logo.png"
-                                style="vertical-align:middle;"
-                                alt="Base Camp Coding Academy"
-                        />
-                    </div>
-                </div>
+<head>
+    <title>Base Camp Coding Academy Job Posting</title>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body class="bg-light">
+<nav
+        style="background-color: #3b1b0c"
+        class="navbar navbar-expand-lg border-bottom border-dark sticky"
+>
+    <ul class="navbar-nav mr-auto nav">
+        <li class="nav-item">
+            <a class="nav-link text-white" href="/">Home</a>
+        </li>
+    </ul>
+</nav>
+<header id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item active">
+            <div
+                    class="fill"
+                    style="background-image:url('images/home-top-bg.png');"
+            >
+                <span class="center-spacer"></span>
+                <img
+                        src="images/basecamp-logo.png"
+                        style="vertical-align:middle;"
+                        alt="Base Camp Coding Academy"
+                />
             </div>
-        </header>
-        {{#failure}}
-            <strong class="text-danger mx-auto">{{.}}</strong>
-        {{/failure}}
-            <form class="mt-3" action="/post" method="POST">
-                <div id="post-form" class="shadow-lg p-3 w-75 mx-auto">
-                    <div style="background-color: #3b1b0c" class="card ">
-                        <div class="card-body text-center text-white">
-                            <h1 class="card-title">Job Posting</h1>
-                        </div>
-                    </div>
-                <div class='form-group'>
-                    <h2 class="mt-5">Company Details</h2>
-                    <hr>
-
-                    <h3>Employer Name  <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <input type="text" name="name" placeholder="John Doe" required="required"><br>
-
-                    <h3 class="mt-3">Company Name <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <input type="text" name="company" required="required" placeholder="Company Name"><br>
-
-                    <h3 class="mt-3">Industry <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <input type="text" list="jobs" name="industry" required="required" placeholder="Computer Software"><br>
-                    <datalist id="jobs">
-                        <option value="Computer Software">
-                        <option value="Information Technology">
-                        <option value="Computer Networking">
-                        <option value="Program Development">
-                        <option value="Information Services">
-                    </datalist>
-
-                    <h3 class="mt-3">Company Hiring Site <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <input type="url" name="hireSite" required="required" placeholder="Company Hiring Site"><br>
-
-                    <h3 class="mt-3">Company Logo <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <!--write javascript to display img before submission-->
-                    <input id="source" type="url" name="logo" placeholder="https://basecampcodingacademy.org/images/header-logo.png" required>
-                    <div class="container">
-                        <img id="preview" src="" alt="Company Logo">
-                    </div>
-                </div>
-                <div class='form-group'>
-                    <h2 class="mt-5">Job Details</h2>
-                    <hr>
-                    <h3>Job Position <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <input type="text" name="position" required="required" placeholder="Job Position"><br>
-                    <h3 class="mt-3">Job Location <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <input type="text" name="location" required="required" placeholder="Job Location"><br>
-                    <h3 class="mt-3">Experience Level <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <input type="radio" name="exp" value="Internship">Internship<br>
-                    <input type="radio" name="exp" value="Entry" checked>Entry<br>
-                    <input type="radio" name="exp" value="Associate">Associate<br>
-                    <input type="radio" name="exp" value="Mid-Senior">Mid-Senior<br>
-                    <input type="radio" name="exp" value="Director">Director<br>
-                    <input type="radio" name="exp" value="Executive">Executive<br>
-                    <h3 class="mt-3">Job Description <span class="text-danger" style="font-size: 14px">* Required</span></h3>
-                    <textarea class="form-control" name="desc" required="required" rows="4" cols="50" placeholder="Job Description"></textarea>
-                </div>
-                    <div class="form-group">
-                        <h2 class="mt-5">Extra Details</h2>
-                        <hr>
-                    <h3>Benefits</h3>
-                    <textarea class="form-control" name="benefits" rows="4" cols="50" placeholder="Benefit&#10;Benefit&#10;Benefit"></textarea>
-                    <h3 class="mt-3">Qualifications</h3>
-                    <textarea class="form-control" name="qualifications" rows="4" cols="50" placeholder="Qualification&#10;Qualification&#10;Qualification"></textarea>
-                </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-            </form>
         </div>
-    </body>
-    <script>
+    </div>
+</header>
+{{#failure}}
+    <strong class="text-danger mx-auto">{{.}}</strong>
+{{/failure}}
+<form class="mt-3" action="/post" method="POST">
+    <div id="post-form" class="shadow-lg p-3 w-75 mx-auto">
+        <div style="background-color: #3b1b0c" class="card ">
+            <div class="card-body text-center text-white">
+                <h1 class="card-title">Job Posting</h1>
+            </div>
+        </div>
+        <div class='form-group'>
+            <h2 class="mt-5">Company Details</h2>
+            <hr>
+
+            <h3>Employer Name  <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <input type="text" name="name" placeholder="John Doe" required="required"><br>
+
+            <h3 class="mt-3">Company Name <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <input type="text" name="company" required="required" placeholder="Company Name"><br>
+
+            <h3 class="mt-3">Industry <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <input type="text" list="jobs" name="industry" required="required" placeholder="Computer Software"><br>
+            <datalist id="jobs">
+                <option value="Computer Software">
+                <option value="Information Technology">
+                <option value="Computer Networking">
+                <option value="Program Development">
+                <option value="Information Services">
+            </datalist>
+
+            <h3 class="mt-3">Company Hiring Site <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <input type="url" name="hireSite" required="required" placeholder="https://basecampcodingacademy.org/careers"><br>
+
+            <h3 class="mt-3">Company Logo <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <!--write javascript to display img before submission-->
+            <input id="source" type="url" name="logo" placeholder="https://basecampcodingacademy.org/images/header-logo.png" required>
+            <div class="container">
+                <img id="preview" src="" alt="Company Logo">
+            </div>
+        </div>
+        <div class='form-group'>
+            <h2 class="mt-5">Job Details</h2>
+            <hr>
+            <h3>Job Position <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <input type="text" name="position" required="required" placeholder="Job Position"><br>
+            <h3 class="mt-3">Job Location <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <input type="text" name="location" required="required" placeholder="Water Valley, MS, US"><br>
+            <h3 class="mt-3">Experience Level <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <input type="radio" name="exp" value="Internship">Internship<br>
+            <input type="radio" name="exp" value="Entry" checked>Entry<br>
+            <input type="radio" name="exp" value="Associate">Associate<br>
+            <input type="radio" name="exp" value="Mid-Senior">Mid-Senior<br>
+            <input type="radio" name="exp" value="Director">Director<br>
+            <input type="radio" name="exp" value="Executive">Executive<br>
+            <h3 class="mt-3">Job Description <span class="text-danger" style="font-size: 14px">* Required</span></h3>
+            <textarea class="form-control" name="desc" required="required" rows="4" cols="50" placeholder="Job Description"></textarea>
+        </div>
+        <div class="form-group">
+            <h2 class="mt-5">Extra Details</h2>
+            <hr>
+            <h3>Benefits</h3>
+            <textarea class="form-control" name="benefits" rows="4" cols="50" placeholder="Benefit&#10;Benefit&#10;Benefit"></textarea>
+            <h3 class="mt-3">Qualifications</h3>
+            <textarea class="form-control" name="qualifications" rows="4" cols="50" placeholder="Qualification&#10;Qualification&#10;Qualification"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+</form>
+</div>
+</body>
+<script>
         var src = document.getElementById("source")
         var preview = document.getElementById("preview")
         src.addEventListener("keyup", function() {
@@ -121,7 +121,7 @@
             console.log(preview.src + " preview")
         })
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>

@@ -46,81 +46,84 @@
     </div>
 </header>
 <div class="mt-3 p-4">
-    {{#job}}
-<div class="container p-3 mx-auto shadow-lg">
-    <div style="background-color: #3b1b0c" class="card">
-        <div class="card-body text-center text-white">
-            <h1 class="card-title">{{company}}</h1>
-        </div>
-    </div>
-    <div style="font-size: 20px;">
-        <div class="text-center mt-3">
-            <div>
-                <img class="" src="{{logo}}" style="max-width: 100%; height: auto;" alt="Logo">
-            </div>
-            <div>
-                <p>{{company}} - {{industry}}</p>
-                <small>Posted by: {{name}}</small><br>
-                <small>Date: {{date}}</small>
-            </div>
-        </div>
-            <h2 class="mt-5 text-center">Job Details</h2>
-            <hr>
-        <div class="d-job">
-            <div class="p-3">
-                <div class="d-inline-block">
-                    <p class="font-weight-bolder">Job Position</p>
-                    <hr>
+{{#job}}
+        <div class="container p-3 mx-auto shadow-lg">
+            <div style="background-color: #3b1b0c" class="card">
+                <div class="card-body text-center text-white">
+                    <h1 class="card-title">{{company}}</h1>
                 </div>
-                <p>{{position}}</p>
             </div>
-        <div class="p-3">
-            <div class="d-inline-block">
-                <p class="font-weight-bolder">Job Location</p>
+            <div style="font-size: 20px;">
+                <div class="text-center mt-3">
+                    <div>
+                        <img class="" src="{{logo}}" style="max-width: 100%; height: auto;" alt="Logo">
+                    </div>
+                    <div>
+                        <p>{{company}} - {{industry}}</p>
+                        <small>Posted by: {{name}}</small><br>
+                        <small>Date: {{date}}</small>
+                    </div>
+                </div>
+                <h2 class="mt-5 text-center">Job Details</h2>
                 <hr>
-            </div>
-            <p>{{location}}</p>
-        </div>
-        <div class="p-3">
-            <div class="d-inline-block">
-                <p class="font-weight-bolder">Experience Level</p>
-                <hr>
-            </div>
-            <p>{{exp}}</p>
-        </div>
-        </div>
-        <div class="p-3 mc-auto">
-            <div class="d-inline-block">
-                <p class="font-weight-bolder">Job Description</p>
-                <hr>
-            </div>
-            <p class="para">{{desc}}</p>
-        </div>
-        <div class="p-3 mc-auto">
-            <div class="d-inline-block">
-                <p class="font-weight-bolder">Qualifications</p>
-                <hr>
-            </div>
-            <div class="mb-3">
-                {{#qualificationsText}}
-                    <li class="para">{{this}}</li>
-                {{/qualificationsText}}
-            </div>
-        </div>
-        <div class="p-3 mc-auto">
-            <div class="d-inline-block">
-                <p class="font-weight-bolder">Benefits</p>
-                <hr>
-            </div>
-            <div class="mb-3">
-                {{#benefitsText}}
-            <li class="para">{{this}}</li>
-                {{/benefitsText}}
+                <div class="d-job">
+                    <div class="p-3">
+                        <div class="d-inline-block">
+                            <p class="font-weight-bolder">Job Position</p>
+                            <hr>
+                        </div>
+                        <p>{{position}}</p>
+                    </div>
+                    <div class="p-3">
+                        <div class="d-inline-block">
+                            <p class="font-weight-bolder">Job Location</p>
+                            <hr>
+                        </div>
+                        <p>{{location}}</p>
+                    </div>
+                    <div class="p-3">
+                        <div class="d-inline-block">
+                            <p class="font-weight-bolder">Experience Level</p>
+                            <hr>
+                        </div>
+                        <p>{{exp}}</p>
+                    </div>
+                </div>
+                <div class="p-3 mc-auto">
+                    <div class="d-inline-block">
+                        <p class="font-weight-bolder">Job Description</p>
+                        <hr>
+                    </div>
+                    <p class="para">{{desc}}</p>
+                </div>
+                <div class="p-3 mc-auto">
+                    <div class="d-inline-block">
+                        <p class="font-weight-bolder">Qualifications</p>
+                        <hr>
+                    </div>
+                    <div class="mb-3">
+                        {{#qualificationsText}}
+                            <li class="para">{{this}}</li>
+                        {{/qualificationsText}}
+                    </div>
+                </div>
+                <div class="p-3 mc-auto">
+                    <div class="d-inline-block">
+                        <p class="font-weight-bolder">Benefits</p>
+                        <hr>
+                    </div>
+                    <div class="mb-3">
+                        {{#benefitsText}}
+                            <li class="para">{{this}}</li>
+                        {{/benefitsText}}
+                    </div>
+                    <div class="container d-inline">
+                        <a href="{{hireSite}}" class="btn btn-bcca float-right btn-lg">Apply</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
 {{/job}}
 <div class="p-4">
     {{#com}}

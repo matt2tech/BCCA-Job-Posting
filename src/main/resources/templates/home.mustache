@@ -46,45 +46,45 @@
     </div>
 </header>
 <div class="container mt-3 d-flex justify-content-between">
-<div class="dropdown">
-    <button class="btn btn-bcca dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Sort By
-    </button>
-    <form method="GET" class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button type="submit" class="dropdown-item" name="old">Oldest</button>
-        <button type="submit" class="dropdown-item" name="new">Newest</button>
-    </form>
-</div>
+    <div class="dropdown">
+        <button class="btn btn-bcca dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort By
+        </button>
+        <form method="GET" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button type="submit" class="dropdown-item" name="old">Oldest</button>
+            <button type="submit" class="dropdown-item" name="new">Newest</button>
+        </form>
+    </div>
     <div>
-    <form method="GET">
-        <input type="date" name="date">
-        <button type="submit" class="btn-bcca btn">Submit</button>
-        {{#date}}
-            <p>Date: {{.}}</p>
-        {{/date}}
-        {{#error}}
-            <p class="text-danger">ERROR: {{.}}</p>
-        {{/error}}
-    </form>
+        <form method="GET">
+            <input type="date" name="date">
+            <button type="submit" class="btn-bcca btn">Submit</button>
+            {{#date}}
+                <p>Date: {{.}}</p>
+            {{/date}}
+            {{#error}}
+                <p class="text-danger">ERROR: {{.}}</p>
+            {{/error}}
+        </form>
     </div>
 </div>
 <div class="mt-3">
-{{#jobs}}
-    <a href="{{id}}" class="job-link text-body" style="display: contents">
-    <div class="w-50 mb-4 p-2 shadow mx-auto d-flex">
-        <div class="logo" style="background-image: url('{{logo}}');">
-        </div>
-        <div style="padding: 10px 20px;">
-            <p>{{position}}</p>
-            <p>{{company}}</p>
-            <small>{{location}}</small>
-        </div>
-        <div class="desc ml-auto">
-            <p>{{preview}}</p>
-        </div>
-    </div>
-    </a>
-{{/jobs}}
+    {{#jobs}}
+        <a href="{{id}}" class="job-link text-body" style="display: contents">
+            <div class="w-50 mb-4 p-2 shadow mx-auto d-flex">
+                <div class="logo" style="background-image: url('{{logo}}');">
+                </div>
+                <div style="padding: 10px 20px;">
+                    <p>{{position}}</p>
+                    <p>{{company}}</p>
+                    <small>{{location}}</small>
+                </div>
+                <div class="desc ml-auto">
+                    <p>{{preview}}</p>
+                </div>
+            </div>
+        </a>
+    {{/jobs}}
 </div>
 </body>
 
