@@ -12,7 +12,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 @Controller
 @RequestMapping("/")
@@ -33,8 +32,10 @@ public class HomeController {
     @GetMapping("/{id}")
     public String getJobPage(Model model, @PathVariable(value = "id") Integer id) {
         var job = jobRepository.findById(id);
+        var com = jobRepository.findAllComments(id);
         if(job.isPresent()) {
             model.addAttribute("job", job.get());
+            model.addAttribute("com", com);
             return "job";
         } else {
             return "404";

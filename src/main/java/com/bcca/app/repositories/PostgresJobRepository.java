@@ -85,4 +85,8 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
         );
     }
 
+    public void deleteComment(Integer id) {
+        jdbc.update("DELETE FROM comments WHERE id = ?", id);
+    }
+
 }

@@ -29,8 +29,7 @@ public class PostController {
     public String postJob(JobForm job, Model model) {
         if (job.isValid()) {
             jobRepository.save(job);
-            model.addAttribute("success", "Job Posted!");
-            return "post";
+            return "redirect:/";
         } else {
             model.addAttribute("failure", "An error has occurred. Please try again.");
             return "post";

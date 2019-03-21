@@ -31,10 +31,16 @@ public class AdminJobController {
         CommentForm comment = new CommentForm(com.getComment(), new Date(), id);
         if (comment.isValid()) {
             jobRepository.saveComment(comment);
-            return "redirect:/admin";
+            return "redirect:/admin/" + id;
         } else {
             System.out.println("Mission failed. We'll get em next time.");
             return "redirect:/admin/" + id;
         }
+    }
+
+    @PostMapping("/admin/{postId}/{id}/delete")
+    public String deleteComment(@PathVariable(value = "id") String id, @PathVariable(value="postId") String postId){
+        jobRepository.deleteComment(Integer.parseInt(id));
+        return "redirect:/admin/" + postId;
     }
 }

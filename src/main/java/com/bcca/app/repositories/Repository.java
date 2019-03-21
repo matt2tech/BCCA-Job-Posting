@@ -24,4 +24,6 @@ public interface Repository<T> {
 
     void saveComment(CommentForm com);
 
+    void deleteComment(Integer id);
+
 }
