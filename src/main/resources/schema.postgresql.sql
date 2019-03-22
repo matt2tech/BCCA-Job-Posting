@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS postings (
 
 CREATE TABLE IF NOT EXISTS comments (
     id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
     comment TEXT NOT NULL,
     date DATE NOT NULL,
     postId INTEGER REFERENCES postings

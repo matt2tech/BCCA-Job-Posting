@@ -48,7 +48,7 @@
     </header>
 <div class="mt-3 p-4">
     {{#adminJob}}
-        <div class="container p-3 mx-auto shadow">
+        <div class="container p-3 mx-auto shadow-lg bd-lg">
             <div style="background-color: #3b1b0c" class="card">
                 <div class="card-body text-center text-white">
                     <h1 class="card-title">{{company}}</h1>
@@ -141,6 +141,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <input type="text" name="name" placeholder="John Doe" required="required">
                         <textarea class="form-control" name="comment" required="required" rows="4" cols="50" placeholder="Comment"></textarea>
                     </div>
                     <div class="modal-footer">
@@ -153,17 +154,16 @@
     </div>
         <div class="p-4">
             {{#com}}
-                <div id="comment" class="mb-4 p-2 shadow mx-auto">
-                    <p class="font-weight-bolder">Comment</p>
-                    <hr>
-                    <div class="d-flex justify-content-between align-items-end">
-                        <div>
-                            <p>{{comment}}</p>
-                            <small>{{date}}</small>
-                        </div>
-                        <form action="/admin/{{adminJob.id}}/{{id}}/delete" method="POST">
+                <div id="comment" class="mb-4 p-2 shadow mx-auto bd-lg">
+                    <div class="d-flex align-items-center">
+                        <p class="font-weight-bolder flex-1 mb-0">Admin · {{name}}</p>
+                        <form action="/admin/{{adminJob.id}}/{{id}}/delete" method="POST" class="flex-1 mb-0">
                             <button type="submit" class="btn btn-danger btn-sm float-right">Delete</button>
                         </form>
+                    </div>
+                    <hr>
+                    <p>{{comment}}</p>
+                    <small>{{date}}</small>
                     </div>
                 </div>
             {{/com}}

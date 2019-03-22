@@ -28,7 +28,7 @@ public class AdminJobController {
 
     @PostMapping("/admin/{id}")
     public String postCom(CommentForm com, @PathVariable(value = "id") Integer id) {
-        CommentForm comment = new CommentForm(com.getComment(), new Date(), id);
+        CommentForm comment = new CommentForm(com.getName(), com.getComment(), new Date(), id);
         if (comment.isValid()) {
             jobRepository.saveComment(comment);
             return "redirect:/admin/" + id;

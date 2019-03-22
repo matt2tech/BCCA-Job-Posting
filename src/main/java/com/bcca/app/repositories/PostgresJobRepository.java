@@ -69,7 +69,7 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
 //    comment side
 
     public void saveComment(CommentForm com) {
-        jdbc.update("INSERT INTO comments (comment, date, postId) VALUES(?, ?, ?)", com.getComment(), new Date(), com.getPostId());
+        jdbc.update("INSERT INTO comments (name, comment, date, postId) VALUES(?, ?, ?, ?)", com.getName(), com.getComment(), new Date(), com.getPostId());
     }
 
     public List<CommentForm> findAllComments(Integer id) {
@@ -79,6 +79,7 @@ public class PostgresJobRepository implements com.bcca.app.repositories.Reposito
     public CommentForm mapRowToCom(ResultSet row, int rowNum) throws SQLException {
         return new CommentForm(
                 row.getInt("id"),
+                row.getString("name"),
                 row.getString("comment"),
                 row.getDate("date"),
                 row.getInt("postId")

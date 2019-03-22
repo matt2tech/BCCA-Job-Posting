@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class CommentForm {
     private Integer id;
+    private String name;
     private String comment;
     private Date date;
     private Integer postId;
@@ -12,14 +13,16 @@ public class CommentForm {
 
     }
 
-    public CommentForm(Integer id, String comment, Date date, Integer postId) {
+    public CommentForm(Integer id, String name, String comment, Date date, Integer postId) {
         this.id = id;
+        this.name = name;
         this.comment = comment;
         this.date = date;
         this.postId = postId;
     }
 
-    public CommentForm(String comment, Date date, Integer postId) {
+    public CommentForm(String name, String comment, Date date, Integer postId) {
+        this.name = name;
         this.comment = comment;
         this.date = date;
         this.postId = postId;
@@ -31,6 +34,14 @@ public class CommentForm {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getComment() {

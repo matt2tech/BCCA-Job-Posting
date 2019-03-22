@@ -47,7 +47,7 @@
 </header>
 <div class="mt-3 p-4">
 {{#job}}
-        <div class="container p-3 mx-auto shadow-lg">
+        <div class="container p-3 mx-auto shadow-lg bd-lg">
             <div style="background-color: #3b1b0c" class="card">
                 <div class="card-body text-center text-white">
                     <h1 class="card-title">{{company}}</h1>
@@ -127,11 +127,13 @@
 {{/job}}
 <div class="p-4">
     {{#com}}
-        <div id="comment" class="mb-4 p-2 shadow mx-auto">
-            <p class="font-weight-bolder">Comment</p>
+        <div id="comment" class="mb-4 p-2 shadow mx-auto bd-lg">
+            <div class="d-flex align-items-center">
+                <p class="font-weight-bolder flex-1" style="margin-bottom: 0px;">Admin · {{name}}</p>
+                <small class="flex-1 text-center">{{date}}</small>
+            </div>
             <hr>
             <p>{{comment}}</p>
-            <small>{{date}}</small>
         </div>
     {{/com}}
 </div>
